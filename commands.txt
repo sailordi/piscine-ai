@@ -1,0 +1,16 @@
+Run script: python3.8 conda_project.py or vnv_project.py
+
+Activate conda: conda activate /Users/sai/Prog/piscine-ai/ex00
+Activate vnv: source ex00/bin/activate 
+
+Install conda: 
+    conda install -c anaconda jupyter -y
+    conda install -c anaconda --file requirements.txt -y
+
+Install vnv:
+    pip3.8 install jupyter notebook
+
+jupiter notebook --port 8891 --NotebookApp.notebook_name={Notebook_}
+
+Deactivate conda: conda deactivate
+Deactivate vnv: deactivate

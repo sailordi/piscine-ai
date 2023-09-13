@@ -8,7 +8,7 @@ Install conda:
     conda install -c anaconda --file requirements.txt -y
 
 Install vnv:
-    pip3.8 install jupyter notebook
+    pip3.8 install -r ex00/requirements.txt
 
 jupiter notebook --port 8891 --NotebookApp.notebook_name={Notebook_}
 

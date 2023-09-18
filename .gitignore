@@ -152,11 +152,11 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-*/bin
-*/etc
-*/include
-*/share
-*/lib
+*/*/bin
+*/*/etc
+*/*/include
+*/*/share
+*/*/lib
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

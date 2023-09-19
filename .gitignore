@@ -152,6 +152,12 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+*/bin
+*/etc
+*/include
+*/share
+*/lib
+
 */*/bin
 */*/etc
 */*/include

@@ -9,7 +9,7 @@ create_env() {
 
 handle_libraries() {
     env_name=$1
-    libraries=$2
+    libraries="$2,notebook"
     file_name="requirements.txt"
     requirements_path="$env_name/$file_name"
     
@@ -34,7 +34,7 @@ jupiter_inst() {
     echo "{ \"cells\": [], \"metadata\": {}, \"nbformat\": 4, \"nbformat_minor\": 2 }" > "$notebook_name.ipynb"
 
     # Launch Jupyter Notebook on port 8891 with the specified notebook name
-    jupyter notebook --port $port $notebook_name.ipynb
+    jupyter notebook --ip=127.0.0.1 --port $port $notebook_name.ipynb
 
     cd ..
 }

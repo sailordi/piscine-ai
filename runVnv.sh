@@ -10,10 +10,16 @@ port_number="${port_number:-8891}"
 
 cd "$env_name"
 
+# Activate the virtual environment
+source "bin/activate" 
+
 # Launch Jupyter Notebook on port 8891 with the specified notebook name
     #jupyter notebook --ip=127.0.0.1 --port $port $notebook_name.ipynb
 
 # Launch Jupyter lab on port 8891 with the specified notebook name
-jupyter lab --ip=127.0.0.1 --port $port $notebook_name.ipynb
+jupyter lab --ip=127.0.0.1 --port $port_number $notebook_name.ipynb
+
+# Deactivate the virtual environment when done
+deactivate  
 
 cd ..

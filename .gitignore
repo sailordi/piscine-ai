@@ -164,6 +164,13 @@ cython_debug/
 */*/share
 */*/lib
 
+household_power_consumption.txt
+.household_power_consumption.txt
+Pandas/household_power_consumption.txt
+Pandas/.household_power_consumption.txt
+*/Pandas/household_power_consumption.txt
+*/Pandas/.household_power_consumption.txt
+
 .DS_Store
 
 # PyCharm

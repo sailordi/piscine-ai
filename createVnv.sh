@@ -43,6 +43,18 @@ jupiter_inst() {
     cd ..
 }
 
+get_notbook_name() {
+    # Input name for jupiter notbook
+    read -p "Enter the notebook name (name format will be Notebook_ your input): " notebook_name
+
+    if [ -z "$notebook_name" ]; then
+        echo "Notebook name is empty. Exiting script."
+        exit 1 
+    else
+        echo "Notebook_$notebook_name"
+    fi
+}
+
 # Input version of Python
 read -p "Enter the Python version (default is 3.10): " python_version
 python_version=${python_version:-3.10}
@@ -53,15 +65,7 @@ read -p "Enter the name for the virtual environment: " env_name
 # Input libraries
 read -p "Enter required libraries (comma-separated): " libraries
 
-# Input name for jupiter notbook
-# Input name for jupiter notbook
-read -p "Enter the notebook name (name format will be Notebook_ your input ): " notebook_name
-
-if [[ -z "$notebook_name" ]]; then
-    echo "Notebook name is empty. Exiting script."
-    exit 1
-
-notebook_name= "Notebook_"+notebook_name
+notebook_name=$(get_notbook_name)
 
 # Prompt the user for the port number
 read -p "Enter the port number (default is 8891): " port_number

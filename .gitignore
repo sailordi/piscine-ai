@@ -158,12 +158,6 @@ cython_debug/
 */share
 */lib
 
-*/*/bin
-*/*/etc
-*/*/include
-*/*/share
-*/*/lib
-
 .DS_Store
 
 */data

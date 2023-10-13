@@ -21,6 +21,7 @@ handle_libraries() {
 install_libraries() {
     env_name=$1
 
+    pip install --upgrade pip
     pip install -r "$env_name/requirements.txt"
     python -m ipykernel install --user --name="$env_name"
 }

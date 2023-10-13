@@ -1,3 +1,9 @@
+install_libraries() {
+    pip install --upgrade pip
+    pip install -r "requirements.txt"
+    python -m ipykernel install --user --name="$env_name"
+}
+
 get_notbook_name() {
     # Input name for jupiter notbook
     read -p "Enter the notebook name (name format will be Notebook_ your input): " notebook_name
@@ -23,6 +29,8 @@ cd "$env_name"
 
 # Activate the virtual environment
 source "bin/activate" 
+
+install_libraries "$env_name"
 
 # Launch Jupyter Notebook on port 8891 with the specified notebook name
     #jupyter notebook --ip=127.0.0.1 --port $port $notebook_name.ipynb

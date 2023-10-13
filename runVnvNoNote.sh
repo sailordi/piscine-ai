@@ -1,4 +1,5 @@
 install_libraries() {
+    pip install --upgrade pip
     pip install -r "requirements.txt"
     python -m ipykernel install --user --name="$env_name"
 }
@@ -15,7 +16,7 @@ cd "$env_name"
 # Activate the virtual environment
 source "bin/activate" 
 
-install_libraries
+install_libraries "$env_name" 
 
 # Launch Jupyter Notebook on port 8891 with the specified notebook name
     #jupyter notebook --ip=127.0.0.1 --port $port $notebook_name.ipynb

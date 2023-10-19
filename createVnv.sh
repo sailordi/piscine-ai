@@ -14,6 +14,13 @@ handle_libraries() {
     file_name="requirements.txt"
     requirements_path="$env_name/$file_name"
     
+    if [ -z "$2" ]; then
+
+    else
+        # Write libraries to requirements.txt
+        echo "$libraries" | tr ',' '\n' > "$requirements_path"
+    fi
+
     # Write libraries to requirements.txt
     echo "$libraries" | tr ',' '\n' > "$requirements_path"
 }

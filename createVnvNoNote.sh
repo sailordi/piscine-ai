@@ -14,8 +14,10 @@ handle_libraries() {
     file_name="requirements.txt"
     requirements_path="$env_name/$file_name"
     
-    # Write libraries to requirements.txt
-    echo "$libraries" | tr ',' '\n' > "$requirements_path"
+    if [ -n "$2" ]; then
+        # Write libraries to requirements.txt
+        echo "$libraries" | tr ',' '\n' > "$requirements_path"
+    fi
 }
 
 install_libraries() {
@@ -34,7 +36,11 @@ python_version=${python_version:-3.10}
 read -p "Enter the name for the virtual environment: " env_name
 
 # Input libraries
-read -p "Enter required libraries (comma-separated): " libraries
+read -p "Enter required libraries (comma-separated leave empty to use requirements.txt): " libraries
+
+# Prompt the user for the port number
+read -p "Enter the port number (default is 8891): " port_number
+port_number="${port_number:-8891}"
 
 create_env "$python_version" "$env_name"
 handle_libraries "$env_name" "$libraries"
@@ -43,6 +49,12 @@ handle_libraries "$env_name" "$libraries"
 source "$env_name/bin/activate" 
 
 install_libraries "$env_name"
+
+# Launch Jupyter Notebook on port 8891 with the specified notebook name
+    #jupyter notebook --ip=127.0.0.1 --port $port $notebook_name.ipynb
+
+# Launch Jupyter lab on port 8891 with the specified notebook name
+jupyter lab --ip=127.0.0.1 --port $port_number
 
 # Deactivate the virtual environment when done
 deactivate  

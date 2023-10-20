@@ -66,7 +66,7 @@ python_version=${python_version:-3.10}
 read -p "Enter the name for the virtual environment: " env_name
 
 # Input libraries
-read -p "Enter required libraries (comma-separated): " libraries
+read -p "Enter required libraries (comma-separated leave empty to use requirements.txt): " libraries
 
 notebook_name=$(get_notbook_name)
 

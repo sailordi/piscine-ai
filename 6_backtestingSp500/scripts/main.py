@@ -1,4 +1,4 @@
-from scripts.memory_reducer import *
+from memory_reducer import *
 
 # Download needed files if they do not exist
 download_files(['https://raw.githubusercontent.com/01-edu/public/master/subjects/ai/backtesting-sp500/data/sp500.csv',

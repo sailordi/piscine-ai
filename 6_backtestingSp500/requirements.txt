@@ -1,0 +1,6 @@
+pandas
+numpy
+wget
+matplotlib
+scikit-learn
+jupyterlab

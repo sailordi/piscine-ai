@@ -1,6 +1,9 @@
 install_libraries() {
-    pip install --upgrade pip
+    python -m ensurepip
+    python -m ensurepip --upgrade
+    python -m pip install --upgrade pip
     pip install -r "requirements.txt"
+    pip install ipykernel
     python -m ipykernel install --user --name="$env_name"
 }
 
